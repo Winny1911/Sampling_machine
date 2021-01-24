@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"></script>
+		
+		<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+
+    <title>Página Inicial</title>
+  </head>
+  <body>
+    <div class="wrap">
+    
+    <!-- Header -->
+    <div class="logo my-3" style="background-image: url(img/Logo_Heineken-Zero.png)"></div>
+    <h2 class="text-center mb-4">Vamos ver sua identificação</h2>
+    <h3 class="text-center mb-4">Entre com sua data de nascimento:</h3>
+    <h3 class="text-center text-danger mb-4">Idade não corresponde a promoção</h2>
+
+    <!-- Formulário -->
+    <form>
+      <div class="form-control-wrapper">
+        <input type="text" id="date" class="form-control floating-label" placeholder="Date">
+      </div>
+    </form>
+    </div>
+
+    <div class="logo" style="background-image: url(img/AgoraVocePodeHeineken.png)"></div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      Todos os direitos reservados
+    </div>
+
+    <!-- Datepicker -->
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+        $('#date').bootstrapMaterialDatePicker
+        ({
+          time: false,
+          clearButton: true
+        });
+        $.material.init()
+      });
+      </script>
+
+  
+  </body>
+</html>

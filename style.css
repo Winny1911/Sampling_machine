@@ -2,6 +2,7 @@
 
 * {font-family: 'Poppins', sans-serif;}
 body { color: #707070;}
+body.gray { background-color: #F5F5F5;}
 
 /* form */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -21,10 +22,12 @@ color: #C9C9C9;
 .text-muted { color: red!important;}
 .btn-primary { background-color: #0E2C6A; }
 .btn { border-radius: 8px; border: none; min-width: 240px; padding: 10px;}
+.bd-left {border-left: 4px solid #707070;}
 
 /* font */
 h2 { font-size: 18px; color: #707070; font-weight: bold;}
-h2.blue { font-weight: normal; color: #0E2C6A;}
+h2.tit { font-size: 38px; font-weight: 500;}
+.blue { font-weight: normal; color: #0E2C6A;}
 h3 { font-size: 14px; color: #707070; font-weight: normal;}
 h3.text-danger { font-size: 16px; color: #707070; font-weight: bold;}
 p { font-size: 12px;}
@@ -32,6 +35,7 @@ p { font-size: 12px;}
 /* geral */
 .wrap { padding: 0 30px; padding-bottom: 100px;}
 .logo { background-size: contain; background-repeat: no-repeat; background-position: center center; height: 160px;}
+.logo2 { background-size: contain; background-repeat: no-repeat; background-position: center center; height: 360px;}
 
 /* ligacao */
 .buttoncall { margin: 0 20px;}

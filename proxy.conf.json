@@ -1,0 +1,9 @@
+{
+  "/api": {     
+      "target": "https://9dm42y70ef.execute-api.us-west-2.amazonaws.com",
+      "pathRewrite": { "^/api" : "" },
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "secure": false   
+  }
+}

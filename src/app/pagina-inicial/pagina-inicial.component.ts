@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -8,14 +9,15 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PaginaInicialComponent implements OnInit {
 
-  range = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl()
-  });
+  birthday : Date;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToRules(){
+    this.router.navigate(['/regulamento', {birthday: this.birthday.toISOString()}]);
   }
 
 }

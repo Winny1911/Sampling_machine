@@ -13,28 +13,33 @@
   <body>
     <div class="wrap">
     
+
+  
     <!-- Header -->
     <div class="logo my-3" style="background-image: url(/assets/img/Logo_Heineken-Zero.png)"></div>
     <h2 class="text-center mb-4">Vamos ver sua identificação</h2>
-    <h3 class="text-center text-danger mb-4">Brinde resgatado anteriormente</h3>
+    <!-- <h3 class="text-center text-danger mb-4">Brinde resgatado anteriormente</h3> -->
 
     <!-- Formulário -->
     <form>
+      <div class="alert alert-danger" role="alert" [hidden]="errorMessage == ''">
+        {{errorMessage}}
+      </div>  
       <div class="form-group">
-        <input type="text" class="form-control" id="nome" aria-describedby="nomeAjuda" placeholder="Nome">
+        <input type="text" class="form-control" name="nome" aria-describedby="nomeAjuda" placeholder="Nome" [(ngModel)]="consumer.nome" required>
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" id="email" aria-describedby="emailAjuda" placeholder="Enter">
-        <small id="emailAjuda" class="form-text text-muted">* e-mail inválido</small>
+        <input type="email" class="form-control" name="email" aria-describedby="emailAjuda" placeholder="E-mail" [(ngModel)]="consumer.email" required>
+        <small id="emailAjuda" class="form-text text-muted" style="color:red !important" [hidden]="emailValid()">* e-mail inválido</small>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="telefone" aria-describedby="telefoneAjuda" placeholder="Telefone">
-        <small id="telefoneAjuda" class="form-text text-muted">* telefone inválido XX 99999-9999</small>
+        <input type="number" class="form-control" name="telefone" aria-describedby="telefoneAjuda" placeholder="(XX) XXXXXXXXX" [(ngModel)]="consumer.telefone" pattern="/\(?([0-9]{2})\)?([ .-]?)([0-9]{5})\2([0-9]{4})/">
+        <small id="telefoneAjuda" class="form-text text-muted" [hidden]="phoneValid()" style="color:red !important">* Ex de telefone válido (XX) 999999999</small>
       </div>
       <small>Aceito receber informações sobre campanhas e produtos da Heineken</small>
 
       <div class="my-4 d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary">Prosseguir</button>
+        <button type="submit" class="btn btn-primary" (click)="registerConsumer()">Prosseguir</button>
       </div>
 
     </form>

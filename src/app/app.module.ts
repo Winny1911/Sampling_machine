@@ -1,13 +1,10 @@
 // dependencias
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import {MatNativeDateModule, MAT_DATE_FORMATS, NativeDateModule} from '@angular/material/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask'
 
 //Pages 
  import { AppComponent } from './app.component';
@@ -23,7 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
  import { TokenAcessoComponent } from './token-acesso/token-acesso.component';
 
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -31,47 +32,47 @@ const routes: Routes = [
     component: PaginaInicialComponent  
   },
   {
-    path: 'NaoAceite',
+    path: 'nao-aceite',
     component: AceiteNaoComponent
   },
 
   {
-    path: 'Cadastro',
+    path: 'cadastro',
     component: CadastroIdentificacaoComponent
   },
 
   {
-    path: 'Encerramento',
+    path: 'encerramento',
     component: EncerramentoComponent
   },
 
    {
-    path: 'Token',
+    path: 'token',
     component: EnvioTokenComponent
   },
 
   {
-    path: 'Ligacao',
+    path: 'ligacao',
     component: LigacaoComponent
   },
 
    {
-    path: 'PoliticaPrivacidade',
+    path: 'politica-privacidade',
     component: PoliticaPrivacidadeComponent
   },
 
   {
-    path: 'Regulamento',
+    path: 'regulamento',
     component: RegulamentoCampanhaComponent
   },
 
   {
-    path: 'TelaEspera',
+    path: 'tela-espera',
     component: TelaDesktopAtendenteEsperaComponent
   },
 
   {
-    path: 'AcessoToken',
+    path: 'acesso-token',
     component: TokenAcessoComponent
   }
 
@@ -94,20 +95,24 @@ const routes: Routes = [
 
   imports: [
     RouterModule.forRoot(routes),
+    NgxMaskModule.forRoot(),
     RouterModule,
     FormsModule,
     BrowserModule,
     CommonModule,
-    MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    NativeDateModule,
+    BrowserAnimationsModule, 
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
     BrowserModule, 
     BrowserAnimationsModule,
-    MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule 
+    MatInputModule,
+    HttpClientModule
+    
   ],
 
   providers: [

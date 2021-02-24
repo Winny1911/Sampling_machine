@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-encerramento',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncerramentoComponent implements OnInit {
 
-  constructor() { }
+  public myAngularxQrCode: string = null;
+
+  constructor(private activatedRoute:ActivatedRoute) { 
+    this.myAngularxQrCode = this.activatedRoute.snapshot.params.token
+  }
 
   ngOnInit(): void {
   }

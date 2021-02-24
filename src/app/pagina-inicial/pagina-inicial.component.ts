@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router'
 export class PaginaInicialComponent implements OnInit {
 
   birthday : Date;
+  messageError = ""
 
   constructor(private router: Router) { }
 
@@ -17,7 +18,16 @@ export class PaginaInicialComponent implements OnInit {
   }
 
   goToRules(){
-    this.router.navigate(['/regulamento', {birthday: this.birthday.toISOString()}]);
+    if(this.isOlder())
+      this.router.navigate(['/regulamento', {birthday: this.birthday.toISOString()}]);
+    else
+      this.messageError = "Idade não corresponde a promoção."
   }
 
+  isOlder() {
+    var day = this.birthday.getDay()
+    var month = this.birthday.getMonth()
+    var year = this.birthday.getFullYear()
+    return new Date(year+18, month-1, day) <= new Date();
+  }
 }

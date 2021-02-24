@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
    
     <title>Página Inicial</title>
+    <style>
+    .container {
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
   </head>
   <body>
     <div class="wrap">
@@ -16,6 +23,10 @@
     <!-- Header -->
     <div class="logo my-3" style="background-image: url(/assets/img/AgoraVocePodeHeineken.png)"></div>
     <h2 class="text-center blue my-4">Interação aprovada.</h2>
+    <div class="container">
+      <qrcode  [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+    
     <h2 class="text-center blue mb-4">Agradecemos sua participação. <br>Aprecie o sabor da qualidade.</h2>
     <div class="logo my-3" style="background-image: url(/assets/img/Logo_Heineken-Zero.png)"></div>
     </div>
